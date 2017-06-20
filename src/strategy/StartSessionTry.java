@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import Strategy_Interface.MyState;
 import Strategy_Interface.SimpleStrategyI;
 import data.Bar;
-import data.BarMore;
 import findparameter.ParameterSet;
 
 public class StartSessionTry implements SimpleStrategyI {
@@ -33,7 +32,7 @@ public class StartSessionTry implements SimpleStrategyI {
 
 	@Override
 	public int whatToDo(ArrayList<Bar> barlist, MyState state, int at) {
-		BarMore bar = (BarMore) barlist.get(at);
+		Bar bar = barlist.get(at);
 		max = Math.max(max, bar.high);
 		min = Math.min(min, bar.low);
 		if (openmax==-1) openmax = bar.high;

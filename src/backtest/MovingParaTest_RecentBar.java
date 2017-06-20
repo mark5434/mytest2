@@ -2,11 +2,8 @@ package backtest;
 
 import java.util.ArrayList;
 
-import Strategy_Interface.MyState;
 import Strategy_Interface.SimpleStrategyI;
 import data.Bar;
-import data.BarAll;
-import data.Trade;
 import findparameter.FindNearPara;
 import findparameter.FindParaI;
 import findparameter.ParameterSet;
@@ -29,7 +26,7 @@ public class MovingParaTest_RecentBar {
 		double final_testing_score = 0.0;
 		double final_training_score = 0.0;
 		for (int i=0;i<barlist.size();i++) {
-			BarAll bar = (BarAll) barlist.get(i);
+			Bar bar = barlist.get(i);
 			int bucket_id = i /10000;
 			
 			// 1. update para every bar

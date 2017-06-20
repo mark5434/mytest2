@@ -3,7 +3,6 @@ package Tools;
 import java.util.ArrayList;
 
 import data.Bar;
-import data.BarAll;
 
 public class BarTransform {
 	static public ArrayList<Bar> transformByVolumn(ArrayList<Bar> barlist, int volbin) {
@@ -14,10 +13,10 @@ public class BarTransform {
 		int tlow = Integer.MAX_VALUE;
 		int daybars = 0;
 		for (int i = 0; i < barlist.size(); i++) {
-			BarAll bar = (BarAll) barlist.get(i);
+			Bar bar = barlist.get(i);
 			volcount += bar.volumn;
 			for (int j = 0; j < volcount / volbin; j++) {
-				BarAll nbar = new BarAll();
+				Bar nbar = new Bar();
 				nbar.close = bar.close;
 				nbar.open = topen;
 				nbar.day = bar.day;
@@ -48,10 +47,10 @@ public class BarTransform {
 		int tlow = Integer.MAX_VALUE;
 		int daybars = 0;
 		for (int i = 0; i < barlist.size(); i++) {
-			BarAll bar = (BarAll) barlist.get(i);
+			Bar bar = barlist.get(i);
 			volcount += bar.volumn;
 			if (volcount > volbin) {
-				BarAll nbar = new BarAll();
+				Bar nbar = new Bar();
 				nbar.close = bar.close;
 				nbar.open = topen;
 				nbar.day = bar.day;

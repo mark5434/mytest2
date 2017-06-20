@@ -20,7 +20,7 @@ public class debug_strategy {
 	public static void main(String[] args) throws Exception {
 		String file = "D:/work/java/finance/test_data/test.txt";
 		//String file = "d:/finance/data/format/rb.10s.large";
-		ArrayList<Bar> barlist = ReadFile.readFromFile(file, 3);
+		ArrayList<Bar> barlist = ReadFile.readFromFile(file);
 		//barlist = BarTransform.transformByVolumnTime(barlist, 10000);
 		// SimpleStrategyI isf = new InsessionFollow(480, 90030, 102900);
 		SimpleStrategyI isf1 = new MyMACD(80);

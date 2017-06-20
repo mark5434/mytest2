@@ -11,7 +11,7 @@ public class test_featurelabel {
 
 	public static void main(String[] args) throws Exception {
 		String file = "d:/finance/data/format/pp.1s.20160101-20160408";
-		ArrayList<Bar> barlist = ReadFile.readFromFile(file, 2);
+		ArrayList<Bar> barlist = ReadFile.readFromFile(file);
 		ArrayList<Double> feature = InsessionOnebarDelta.generateFeature(barlist);
 		ArrayList<Double> label = InsessionLabel.tagLabel(barlist, 10);
 		PrintWriter pw = new PrintWriter("d:/check");

@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-import data.BarAll;
+import data.Bar;
 
 public class FormatFile {
 	static public void main(String[] args) throws Exception {
@@ -22,7 +22,7 @@ public class FormatFile {
 		while (sc.hasNext()) {
 			n++;
 			String line = sc.nextLine();
-			BarAll bar = parseLine(line, factor);
+			Bar bar = parseLine(line, factor);
 			pw.println(bar.toString());
 		}
 		sc.close();
@@ -31,8 +31,8 @@ public class FormatFile {
 		return;
 	}
 
-	static public BarAll parseLine(String line, int factor) {
-		BarAll res = new BarAll();
+	static public Bar parseLine(String line, int factor) {
+		Bar res = new Bar();
 		// day, time, open, high, low, close, volumn
 		// day: 2016/1/4
 		// time: 09:00:04

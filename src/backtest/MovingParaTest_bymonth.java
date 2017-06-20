@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import Strategy_Interface.MyState;
 import Strategy_Interface.SimpleStrategyI;
 import data.Bar;
-import data.BarAll;
 import findparameter.FindNearPara;
 import findparameter.FindParaI;
 import findparameter.ParameterSet;
@@ -28,7 +27,7 @@ public class MovingParaTest_bymonth {
 		MyState movingparastate = new MyState();
 		int movinglastr = 0;
 		for (int i=0;i<barlist.size();i++) {
-			BarAll bar = (BarAll) barlist.get(i);
+			Bar bar = barlist.get(i);
 			int mon = bar.day /100 % 100;
 			if (lastmon != -1 && mon != lastmon) {
 				int xst = Math.max(0, i-5000);

@@ -5,6 +5,9 @@ public class Bar {
 	public int time;
 	public int high;
 	public int low;
+	public int open;
+	public int close;
+	public int volumn;
 
 	@Override
 	public String toString() {
@@ -16,6 +19,12 @@ public class Bar {
 		sb.append(high);
 		sb.append(' ');
 		sb.append(low);
+		sb.append(' ');
+		sb.append(open);
+		sb.append(' ');
+		sb.append(close);
+		sb.append(' ');
+		sb.append(volumn);
 		return sb.toString();
 	}
 
@@ -26,6 +35,9 @@ public class Bar {
 		res.time = Integer.parseInt(p[1]);
 		res.high = Integer.parseInt(p[2]);
 		res.low = Integer.parseInt(p[3]);
+		res.open = Integer.parseInt(p[4]);
+		res.close = Integer.parseInt(p[5]);
+		res.volumn = Integer.parseInt(p[6]);
 		return res;
 	}
 }

@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import Strategy_Interface.MyState;
 import Strategy_Interface.SimpleStrategyI;
 import data.Bar;
-import data.BarMore;
 import findparameter.ParameterSet;
 
 public class UpDownCount implements SimpleStrategyI {
@@ -61,8 +60,8 @@ public class UpDownCount implements SimpleStrategyI {
 	@Override
 	public int whatToDo(ArrayList<Bar> barlist, MyState state, int at) {
 		if (at==0) return 0;
-		BarMore bar = (BarMore) barlist.get(at);
-		BarMore barl = (BarMore) barlist.get(at-1);
+		Bar bar = barlist.get(at);
+		Bar barl = barlist.get(at-1);
 		int tag = 0;
 		if (bar.close>barl.close) {
 			tag = 1;

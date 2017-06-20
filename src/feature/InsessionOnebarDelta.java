@@ -3,7 +3,6 @@ package feature;
 import java.util.ArrayList;
 
 import data.Bar;
-import data.BarMore;
 
 public class InsessionOnebarDelta {
 	static public ArrayList<Double> generateFeature(ArrayList<Bar> barlist) {
@@ -11,7 +10,7 @@ public class InsessionOnebarDelta {
 		int last = -1;
 		int lasttime = -1;
 		for (int i = 0; i < barlist.size(); i++) {
-			BarMore bar = (BarMore) barlist.get(i);
+			Bar bar = barlist.get(i);
 			if (bar.time - lasttime > 3600 || bar.time - lasttime < -3600) {
 				last = -1;
 			}

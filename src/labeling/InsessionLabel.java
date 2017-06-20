@@ -3,7 +3,6 @@ package labeling;
 import java.util.ArrayList;
 
 import data.Bar;
-import data.BarMore;
 
 public class InsessionLabel {
 	static public ArrayList<Double> tagLabel(ArrayList<Bar> barlist, int futureBars) {
@@ -21,7 +20,7 @@ public class InsessionLabel {
 			for (int j = 1; j < futureBars; j++) {
 				if (i + j == barlist.size())
 					break;
-				BarMore jbar = (BarMore) barlist.get(i + j);
+				Bar jbar = barlist.get(i + j);
 				if (jbar.time - lasttime > 3600 || jbar.time - lasttime < -3600) {
 					break;
 				}
@@ -30,7 +29,7 @@ public class InsessionLabel {
 				lasttime = jbar.time;
 				timeexitp = jbar.low;
 			}
-			int now = ((BarMore) barlist.get(i)).close;
+			int now = barlist.get(i).close;
 			// BarMore next = (BarMore) barlist.get(i+1);
 			// now = next.high;
 			if (now - low >= 10) {

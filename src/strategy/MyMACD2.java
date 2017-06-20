@@ -1,13 +1,11 @@
 package strategy;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 import Strategy_Interface.MyState;
 import Strategy_Interface.SimpleStrategyI;
 import data.Bar;
-import data.BarMore;
 import findparameter.ParameterSet;
 
 public class MyMACD2 implements SimpleStrategyI {
@@ -70,7 +68,7 @@ public class MyMACD2 implements SimpleStrategyI {
 
 	@Override
 	public int whatToDo(ArrayList<Bar> barlist, MyState state, int at) {
-		BarMore bar = (BarMore) barlist.get(at);
+		Bar bar = barlist.get(at);
 		if (buf_fast_avg<0) buf_fast_avg = bar.close;
 		if (buf_slow_avg<0) buf_slow_avg = bar.close;
 		buf_fast_avg = buf_fast_avg * fast_avg_decay + (1-fast_avg_decay) * bar.close;

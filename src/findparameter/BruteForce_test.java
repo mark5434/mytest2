@@ -4,25 +4,17 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 
 import Strategy_Interface.SimpleStrategyI;
-import backtest.SimpleResult;
-import backtest.UpDownRatioTest;
 import backtest.RevenueTest;
+import backtest.SimpleResult;
 import data.Bar;
 import files.ReadFile;
-import statistics.UpDown;
 import strategy.CombineStrategy;
 import strategy.CombineStrategy_withsessionexit;
 import strategy.FiveReference_v0;
-import strategy.InsessionFollow;
 import strategy.MovingStopLoss;
-import strategy.MyMACD_fast;
-import strategy.MyMACD_own;
-import strategy.MyMACD_rev;
-import strategy.NewHighLow;
-import strategy.MyMACD;
 import strategy.MyMACD2;
+import strategy.MyMACD_own;
 import strategy.SessionExit;
-import strategy.StartSessionTry;
 import strategy.StopLoss;
 import strategy.UpDownCount;
 import strategy.XBarExit;
@@ -40,7 +32,7 @@ public class BruteForce_test {
 		//String file = "d:/finance/data/format/rb.10m.20160101-20160423";
 		//String file = "d:/finance/data/format/rb.10s.large";
 		//String file = "d:/finance/data/format/rb.10s.test";
-		ArrayList<Bar> barlist = ReadFile.readFromFile(file, 3);
+		ArrayList<Bar> barlist = ReadFile.readFromFile(file);
 		//barlist = (ArrayList<Bar>) barlist.subList(barlist.size()-10000, barlist.size());
 		//barlist = BarTransform.transformByVolumnTime(barlist, 10000);
 		PrintStream out = new PrintStream("d:/finance/result/temp.csv");
@@ -83,7 +75,7 @@ public class BruteForce_test {
 		String file = "d:/finance/data/format.10s/p.10s.20160101-20160529";
 		//String file = "d:/finance/data/format/rb.10m.20160101-20160423";
 		//String file = "d:/finance/data/format/rb.10s.test";
-		ArrayList<Bar> barlist = ReadFile.readFromFile(file, 3);
+		ArrayList<Bar> barlist = ReadFile.readFromFile(file);
 		//barlist = BarTransform.transformByVolumnTime(barlist, 10000);
 		
 		SimpleStrategyI dayexit = new SessionExit();
@@ -123,7 +115,7 @@ public class BruteForce_test {
 	static public void try1day() throws Exception {
 		//String file = "d:/finance/data/pp.1s.20160101-20160408";
 		String file = "d:/finance/data/format/ag.10s.20160101-20160515";
-		ArrayList<Bar> barlist = ReadFile.readFromFile(file, 3);
+		ArrayList<Bar> barlist = ReadFile.readFromFile(file);
 
 		SimpleStrategyI dayexit = new SessionExit();
 		//CombineStrategy_withsessionexit isf = new CombineStrategy_withsessionexit(22900);

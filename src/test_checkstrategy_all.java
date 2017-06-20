@@ -19,7 +19,7 @@ import strategy.StopLoss;
 public class test_checkstrategy_all {
 
 	public static void main(String[] args) throws Exception {
-		String fileroot = "d:/finance/data/format.1min.20150101-20160906/";
+		String fileroot = "d:/future/format.1min.20150101-20160906/";
 		File root_dir = new File(fileroot);
 		File[] list = root_dir.listFiles();
 		for (File f : list) {
@@ -30,7 +30,7 @@ public class test_checkstrategy_all {
 	public static void do_one (String file) throws Exception {
 		
 		//String file = "d:/finance/data/format/rb.10s.large";
-		ArrayList<Bar> barlist = ReadFile.readFromFile(file, 3);
+		ArrayList<Bar> barlist = ReadFile.readFromFile(file);
 		//barlist = BarTransform.transformByVolumnTime(barlist, 10000);
 		// SimpleStrategyI isf = new InsessionFollow(480, 90030, 102900);
 		SimpleStrategyI isf1 = new MyMACD(80);

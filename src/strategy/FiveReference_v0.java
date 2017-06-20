@@ -8,7 +8,6 @@ import Strategy_Interface.MyState;
 import Strategy_Interface.SimpleStrategyI;
 import Tools.SessionChecker;
 import data.Bar;
-import data.BarMore;
 import findparameter.ParameterSet;
 
 public class FiveReference_v0 implements SimpleStrategyI {
@@ -79,7 +78,7 @@ public class FiveReference_v0 implements SimpleStrategyI {
 	@Override
 	public int whatToDo(ArrayList<Bar> barlist, MyState state, int at) {
 //		System.out.println(at+":"+info());
-		BarMore bar = (BarMore) barlist.get(at);
+		Bar bar = barlist.get(at);
 		if (sc.is_session_first(barlist, at)>=0) {
 			_l_open = _n_open;
 			_n_open = bar.open;
